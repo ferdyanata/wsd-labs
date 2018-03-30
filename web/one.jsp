@@ -36,11 +36,7 @@
         <p>Your gender is <%= gender%>.</p>
         <p>Your favourite colour is <%= favcol%>.</p>
         <% } %>
-    
-
     <% } else { %>
-    
-   
         <form action="one.jsp" method="POST">
             <table>
                 <tbody>

@@ -62,7 +62,7 @@
                 <label for="favouritecolour">Favourite colour</label>
             </td>
             <td>
-                <select name="favcol">
+                <select name="favCol">
                     <option value="red">Red</option>
                     <option value="green">Green</option>
                     <option value="blue">Blue</option>
