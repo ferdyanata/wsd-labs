@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
-        <title></title>
+        <title>Register</title>
     </head>
     <body>
         <!-- 'for' in label corresponds to 'id' in input
@@ -62,7 +62,7 @@
                             <label for="favouritecolour">Favourite colour</label>
                         </td>
                         <td>
-                            <select name="favCol">
+                            <select name="favcol">
                                 <option value="red">Red</option>
                                 <option value="green">Green</option>
                                 <option value="blue">Blue</option>
