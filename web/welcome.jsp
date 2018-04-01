@@ -20,7 +20,7 @@
         String password = request.getParameter("password");
         String tos = request.getParameter("tos");
     %>
-    <body bgcolor="<%= favcol%>">
+    <body bgcolor="<%= favcol %>">
         <%
             User user = new User(email, name, password, gender, favcol);
             session.setAttribute("user", user);

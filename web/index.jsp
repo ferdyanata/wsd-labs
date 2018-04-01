@@ -4,7 +4,7 @@
     Author     : Ferdy
 --%>
 
-<%@page import="uts.wsd.*" contentType="text/html" pageEncoding="UTF-8"%>
+<%@page  import="uts.wsd.*" contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,7 +17,6 @@
         </style>
     </head>
     <body>
-        
         <h1>Diary Keeper</h1>
         <% if(session.getAttribute("user") != null) { 
             User user = (User)session.getAttribute("user"); 

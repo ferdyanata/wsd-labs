@@ -20,9 +20,6 @@ public class User implements Serializable
     private String gender;
     private String favouriteColour;
 
-    public User() {
-    }
-     
     public User(String email, String name, String password, String gender, String favouriteColour)
     {
         this.email = email;
@@ -31,7 +28,7 @@ public class User implements Serializable
         this.gender = gender;
         this.favouriteColour = favouriteColour;
     }
-    
+
     public String getEmail()
     {
         return email;
