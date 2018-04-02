@@ -12,7 +12,6 @@
             <title>Edit User</title>
         </head>
         <body>
-
             <%
                 User user = (User) session.getAttribute("user");
                 if(request.getParameter("email") != null) {            
@@ -44,13 +43,13 @@
                     <tr>
                         <td><label for="email">Email</label></td>
                         <td>
-                            <input id="email" type="text" value="${user.email}" name="email">
+                            <input id="email" type="text" value="<%= user.getEmail() %>" name="email">
                         </td>
                     </tr>
                     <tr>
                         <td><label for="name">Full name</label></td>
                         <td>
-                            <input id="name" type="text" value="${user.name}" name="name">
+                            <input id="name" type="text" value="<%= user.getName() %>" name="name">
                         </td>
                     </tr>
                     <tr>
@@ -59,7 +58,7 @@
                     <tr>
                         <td><label for="password">Password</label></td>
                         <td>
-                            <input id="password" type="password" value="${user.password}" name="password">
+                            <input id="password" type="password" value="<%= user.getPassword() %>" name="password">
                         </td>
                     </tr>
                     <tr>
@@ -68,27 +67,45 @@
                         </td>
                         <td>
                             <div>
-                                <input id="gender" type="radio" name="gender" value="Male" ${user.gender == 'Male' ? 'checked="checked"': ''} >
+                                
+                                <% String checked = "";
+                                    if(user.getGender().equals("Male")){ 
+                                    checked="checked"; %>
+                                <% } %>                                    
+                                <input type="radio" name="gender" value="Male" <%= checked %>>
+                                <%-- The reason we have checked empty here as well is we ensure that it is not preselected before allowing the user
+                                     to select a button --%>
+                                <%= checked = ""%>
                                 Male                 
                             </div>
-                            <div>   
-                                <input type="radio" name="gender" value="Female" ${user.gender == 'Female' ? 'checked="checked"': ''} >
+                            <div>
+                                <% if(user.getGender().equals("Female"))
+                                    checked="checked"; %>
+                                <input type="radio" name="gender" value="Female" <%= checked %>>
+                                <%= checked = ""%>
                                 Female
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label for="favouritecolour">Favourite colour</label>
+                            <label>Favourite colour</label>
                         </td>
                         <td>
-                            <select name="favcol" id="favouritecolour">                     
-                                    <option value="red" ${user.favouriteColour == 'red' ? 'selected="selected"' : ''}>Red</option>
-                                    <option value="green" ${user.favouriteColour == 'green' ? 'selected="selected"' : ''}>Green</option>
-                                    <option value="blue" ${user.favouriteColour == 'blue' ? 'selected="selected"' : ''}>Blue</option>
-                                    <option value="yellow" ${user.favouriteColour == 'yellow' ? 'selected="selected"' : ''}>Yellow</option>
-                                    <option value="orange" ${user.favouriteColour == 'orange' ? 'selected="selected"' : ''}>Orange</option>
-                                    <option value="pink" ${user.favouriteColour == 'pink' ? 'selected="selected"' : ''}>Pink</option>
+                            <select name="favcol">                       
+                                <% String selected = "";
+                                if(user.getFavouriteColour().equals("red")){ selected = "selected"; }
+                                if(user.getFavouriteColour().equals("green")){ selected = "selected"; }
+                                if(user.getFavouriteColour().equals("blue")){ selected = "selected"; }
+                                if(user.getFavouriteColour().equals("yellow")){ selected = "selected"; }
+                                if(user.getFavouriteColour().equals("orange")){ selected = "selected"; }
+                                if(user.getFavouriteColour().equals("pink")){ selected = "selected"; } %>
+                                <option value="red" <%= selected %>>Red</option>
+                                <option value="green" <%= selected %>>Green</option>
+                                <option value="blue" <%= selected %> >Blue</option>
+                                <option value="yellow" <%= selected %>>Yellow</option>
+                                <option value="orange" <%= selected %>>Orange</option>
+                                <option value="pink" <%= selected %>>Pink</option>
                             </select>
                         </td>
                     </tr>

@@ -17,13 +17,14 @@
         </style>
     </head>
     <body>
+        
         <h1>Diary Keeper</h1>
         <% if(session.getAttribute("user") != null) { 
             User user = (User)session.getAttribute("user"); 
-            String log = " &lt " + user.getEmail() + " &gt";
+            String log = " &lt" + user.getEmail() + "&gt";
         %>
             <div class="loggedInBackground">
-            You are logged in as ${user.name} <%= log %>
+            You are logged in as <%= user.getName() %> <%= log %>
             </div>
             <div style="text-align: right;">
                 <a href="logout.jsp">Logout</a>
