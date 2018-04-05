@@ -69,9 +69,7 @@
                             <div>
                                 
                                 <% String checked = "";
-                                    if(user.getGender().equals("Male")){ 
-                                    checked="checked"; %>
-                                <% } %>                                    
+                                    if(user.getGender().equals("Male")){  checked="checked"; } %>                                    
                                 <input type="radio" name="gender" value="Male" <%= checked %>>
                                 <%-- The reason we have checked empty here as well is we ensure that it is not preselected before allowing the user
                                      to select a button --%>
@@ -79,8 +77,7 @@
                                 Male                 
                             </div>
                             <div>
-                                <% if(user.getGender().equals("Female"))
-                                    checked="checked"; %>
+                                <% if(user.getGender().equals("Female")){  checked="checked"; }%>
                                 <input type="radio" name="gender" value="Female" <%= checked %>>
                                 <%= checked = ""%>
                                 Female
@@ -92,20 +89,14 @@
                             <label>Favourite colour</label>
                         </td>
                         <td>
-                            <select name="favcol">                       
-                                <% String selected = "";
-                                if(user.getFavouriteColour().equals("red")){ selected = "selected"; }
-                                if(user.getFavouriteColour().equals("green")){ selected = "selected"; }
-                                if(user.getFavouriteColour().equals("blue")){ selected = "selected"; }
-                                if(user.getFavouriteColour().equals("yellow")){ selected = "selected"; }
-                                if(user.getFavouriteColour().equals("orange")){ selected = "selected"; }
-                                if(user.getFavouriteColour().equals("pink")){ selected = "selected"; } %>
-                                <option value="red" <%= selected %>>Red</option>
-                                <option value="green" <%= selected %>>Green</option>
-                                <option value="blue" <%= selected %> >Blue</option>
-                                <option value="yellow" <%= selected %>>Yellow</option>
-                                <option value="orange" <%= selected %>>Orange</option>
-                                <option value="pink" <%= selected %>>Pink</option>
+                            <select name="favcol">              
+                                <% String selected = "";%>
+                                <option value="red" <%= (user.getFavouriteColour().equals("red")) ? "selected" : " "  %>>Red</option>                  
+                                <option value="green" <%= (user.getFavouriteColour().equals("green")) ? "selected" : " "  %>>Green</option>
+                                <option value="blue" <%= (user.getFavouriteColour().equals("blue")) ? "selected" : " "  %> >Blue</option>
+                                <option value="yellow" <%= (user.getFavouriteColour().equals("yellow")) ? "selected" : " "  %>>Yellow</option>
+                                <option value="orange" <%= (user.getFavouriteColour().equals("orange")) ? "selected" : " "  %> >Orange</option>
+                                <option value="pink" <%= (user.getFavouriteColour().equals("pink")) ? "selected" : " "  %>>Pink</option>
                             </select>
                         </td>
                     </tr>

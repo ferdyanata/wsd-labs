@@ -6,6 +6,7 @@
 package uts.wsd;
 
 import java.io.Serializable;
+import java.util.*;
 
 /**
  *
@@ -13,15 +14,13 @@ import java.io.Serializable;
  */
 public class User implements Serializable
 {
-
     private String email;
     private String name;
     private String password;
     private String gender;
     private String favouriteColour;
 
-    public User() {
-    }
+    public User() {}
      
     public User(String email, String name, String password, String gender, String favouriteColour)
     {
