@@ -6,18 +6,24 @@
 package uts.wsd;
 
 import java.io.Serializable;
-import java.util.*;
+import javax.xml.bind.annotation.*;
 
 /**
  *
  * @author Ferdy
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class User implements Serializable
 {
+    @XmlAttribute(name = "email")
     private String email;
+    @XmlAttribute(name = "name")
     private String name;
+    @XmlAttribute(name = "password")
     private String password;
+    @XmlAttribute(name = "gender")
     private String gender;
+    @XmlAttribute(name = "favouriteColour")
     private String favouriteColour;
 
     public User() {}

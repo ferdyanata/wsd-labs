@@ -39,6 +39,7 @@
                 You are not logged in
             </div>
             <div style="text-align: right;">
+                <a href="login.jsp">Login | </a>
                 <a href="register.jsp">Register</a>
             </div>
         <% } %>

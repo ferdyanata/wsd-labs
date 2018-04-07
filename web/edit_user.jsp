@@ -21,8 +21,8 @@
                 String gender = request.getParameter("gender");
                 String favcol = request.getParameter("favcol");
 
-                /** When setting the attributes below, we retrieve previously entered values 
-                 * and set them in our bean. Then we use EL ${user.email} to update new details.
+                /** When a user enters a new value in the text fields, we request its parameters
+                 * and set them below.
                  */ 
                 
                 user.setEmail(email);

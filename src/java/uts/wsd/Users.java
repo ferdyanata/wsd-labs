@@ -5,15 +5,20 @@
  */
 package uts.wsd;
 
-import java.util.ArrayList;
+import javax.xml.bind.annotation.*;
+import java.util.*;
 import java.io.Serializable;
 
 /**
  *
  * @author Ferdy
  */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "users")
 public class Users implements Serializable
 {
+    @XmlElementWrapper(name = "users")
+    @XmlElement(name = "user")
     private ArrayList<User> list = new ArrayList<User>();
     
     public ArrayList<User> getList(){
