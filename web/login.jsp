@@ -16,7 +16,7 @@
         <!-- Constructs a filesystem path to the WEB-INF/users.xml
              file that is relative to the WebContent directory of your web application.
         -->
-        
+
         <form action="loginAction.jsp" method="POST">
             <table>
                 <tr>
@@ -24,7 +24,7 @@
                         <label for="emailLogin">Email</label>
                     </td>
                     <td>
-                        <input id="emailLogin" type="text">
+                        <input id="emailLogin" type="text" name="email">
                     </td>
                 </tr>
                 <tr>
@@ -32,7 +32,7 @@
                         <label for="passwordLogin">Password</label>
                     </td>
                     <td>
-                        <input id="passwordLogin" type="password">
+                        <input id="passwordLogin" type="password" name="password">
                     </td>
                 </tr>
                 <tr>

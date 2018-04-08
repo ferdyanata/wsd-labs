@@ -15,15 +15,15 @@ import javax.xml.bind.annotation.*;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class User implements Serializable
 {
-    @XmlAttribute(name = "email")
+    @XmlElement(name = "email")
     private String email;
-    @XmlAttribute(name = "name")
+    @XmlElement(name = "name")
     private String name;
-    @XmlAttribute(name = "password")
+    @XmlElement(name = "password")
     private String password;
-    @XmlAttribute(name = "gender")
+    @XmlElement(name = "gender")
     private String gender;
-    @XmlAttribute(name = "favouriteColour")
+    @XmlElement(name = "favouriteColour")
     private String favouriteColour;
 
     public User() {}

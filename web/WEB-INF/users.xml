@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+    Creating a user schema. Any account information that describes the user will be stored in this XML file and will be
+    marshalled and unmarshalled using JAXB.
+    
+    Note that any files stored inside WEB-INF is not accessible from the web. In other words, no file contained in here can be served to the client. Usually files stored in here are
+    for configurations.
 -->
 
 <users>
@@ -16,7 +18,7 @@ and open the template in the editor.
     <user>
         <email>joe@bloggs.com</email>
         <name>Joe Bloggs</name>
-        <password>bfoobar</password>
+        <password>foobar</password>
         <gender>male</gender>
         <favouriteColour>yellow</favouriteColour>
     </user>

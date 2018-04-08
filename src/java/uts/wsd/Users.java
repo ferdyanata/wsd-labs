@@ -5,37 +5,50 @@
  */
 package uts.wsd;
 
-import javax.xml.bind.annotation.*;
 import java.util.*;
 import java.io.Serializable;
+import javax.xml.bind.annotation.*;
 
-/**
- *
- * @author Ferdy
- */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "users")
 public class Users implements Serializable
 {
-    @XmlElementWrapper(name = "users")
     @XmlElement(name = "user")
-    private ArrayList<User> list = new ArrayList<User>();
+    private final ArrayList<User> list = new ArrayList<User>();
+
+    public Users() {}
     
-    public ArrayList<User> getList(){
+    public ArrayList<User> getList()
+    {
         return list;
     }
-    
-    public void addUser(User user){
+
+    public void addUser(User user)
+    {
         list.add(user);
     }
-    
-    public void removeUser(User user){
+
+    public void removeUser(User user)
+    {
         list.remove(user);
     }
-    
-    public User login(String email, String password){
+
+    public User getUser(String email){
         for(User user : list){
-            if(user.getEmail().equals(email) && user.getPassword().equals(password)){
+            if(user.getEmail().equals(email)){
+                return user;
+            }
+        }
+        return null;
+    }
+    
+    public User login(String email, String password)
+    {
+        // For each user in the list...
+        for (User user : list)
+        {
+            if (user.getEmail().equals(email) && user.getPassword().equals(password))
+            {
                 return user; // Login correct. Return this user.
             }
         }

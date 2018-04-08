@@ -13,6 +13,15 @@
         <title>Welcome</title>
     </head>
     <%
+        // 
+        String filePath = application.getRealPath("WEB-INF/users.xml");  
+    %>
+    <jsp:useBean id="diaryApp" class="uts.wsd.DiaryApplication" scope="application">
+        <jsp:setProperty name="diaryApp" property="filePath" value="<%=filePath%>"/>
+    </jsp:useBean>
+    <% Users users = diaryApp.getUsers(); %>
+    
+    <%
         String email = request.getParameter("email");
         String name = request.getParameter("name");
         String gender = request.getParameter("gender");
@@ -21,27 +30,31 @@
         String tos = request.getParameter("tos");
     %>
     <body bgcolor="<%= favcol %>">
-        <%
-            User user = new User(email, name, password, gender, favcol);
-            session.setAttribute("user", user);
-        %>
-        <% if (tos == null)  { %> 
-        
-        <style>body{background-color: white;}</style>
-        <p>Sorry, you must agree to the Terms of Service.</p>
-        <p>Click <a href="register.jsp">here</a> to go back.</p>
+        <% if (tos == null)  { %>        
 
-        <% } else
-        {%>
+            <style>body{background-color: white;}</style>
+            <p>Sorry, you must agree to the Terms of Service.</p>
+            <p>Click <a href="register.jsp">here</a> to go back.</p>
 
-        <h1>Welcome, <%= name %>!</h1>
-        <p>Your Email is <%= email%>.</p>
-        <p>Your password is <%= password%></p>
-        <p>Your gender is <%= gender%>.</p>
-        <p>Your favourite colour is <%= favcol%>.</p>
+        <% } else if(users.getUser(email) == null && tos != null) {%>
 
+            <h1>Welcome, <%= name %>!</h1>
+            <p>Your Email is <%= email%>.</p>
+            <p>Your password is <%= password%></p>
+            <p>Your gender is <%= gender%>.</p>
+            <p>Your favourite colour is <%= favcol%>.</p>
+            <p>Click <a href="index.jsp">here</a> to proceed to the main page.</p>
+            <%
+                User user = new User(email, name, password, gender, favcol);
+                session.setAttribute("user", user);
+                users.addUser(user);
+                diaryApp.updateXML(users, filePath);
+                diaryApp.saveUsers();
+            %>
+
+        <% } else { %>
+            <p>This user already exists.</p>
+            <p>Click <a href="register.jsp">here</a> to go back or click <a href="login.jsp">here</a> to login.</p>
         <% } %>
-        
-        <p>Click <a href="index.jsp">here</a> to proceed to the main page.</p>
-    </body>
+</body>
 </html>

@@ -38,6 +38,26 @@ public class DiaryApplication {
         }
         
     }
+    
+    public void updateXML(Users users, String filePath) throws Exception {
+        this.users = users;
+        this.filePath = filePath;
+        JAXBContext jc = JAXBContext.newInstance(Users.class);
+        Marshaller m = jc.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        FileOutputStream fout = new FileOutputStream(filePath);
+        m.marshal(users, fout);
+        fout.close();
+    }
+    
+    public void saveUsers() throws JAXBException, IOException {
+        JAXBContext jc = JAXBContext.newInstance(Users.class);
+        Marshaller m = jc.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        FileOutputStream fout = new FileOutputStream(filePath);
+        m.marshal(users, fout);
+        fout.close();
+    }
 
     public Users getUsers() {
         return users;
