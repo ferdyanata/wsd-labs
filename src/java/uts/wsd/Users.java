@@ -44,7 +44,7 @@ public class Users implements Serializable
     
     public User login(String email, String password)
     {
-        // For each user in the list...
+        // Checking the list if their email and password matches to one available in the ArrayList.
         for (User user : list)
         {
             if (user.getEmail().equals(email) && user.getPassword().equals(password))

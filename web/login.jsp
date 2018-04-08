@@ -2,6 +2,7 @@
     Document   : login.jsp
     Created on : 07/04/2018, 2:53:09 PM
     Author     : Ferdy
+    Description : Display login form to the user.
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

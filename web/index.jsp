@@ -19,6 +19,9 @@
     <body>
         
         <h1>Diary Keeper</h1>
+        <!-- Retrieve the attribute in getAttribute("user") created in welcome.jsp 
+               This needs to be inside the if statement so the compiler understands which session we're 
+               referring to.-->
         <% if(session.getAttribute("user") != null) { 
             User user = (User)session.getAttribute("user"); 
             String log = " &lt" + user.getEmail() + "&gt";

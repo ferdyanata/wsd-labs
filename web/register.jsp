@@ -4,6 +4,7 @@
   Date: 24/03/2018
   Time: 12:26 AM
   To change this template use File | Settings | File Templates.
+  Description: Creating a form to display to the user and register their details.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>

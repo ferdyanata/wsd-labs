@@ -1,7 +1,8 @@
 <%-- 
-    Document   : edit_user
+    Document  : edit_user
     Created on : 31/03/2018, 9:49:55 PM
-    Author     : Ferdy
+    Author        : Ferdy
+    Description :  Allows the user to edit their information from when they first registered to the application.
 --%>
 
 <%@page import="uts.wsd.*" contentType="text/html" pageEncoding="UTF-8" %>
@@ -23,8 +24,7 @@
 
                 /** When a user enters a new value in the text fields, we request its parameters
                  * and set them below.
-                 */ 
-                
+                 */         
                 user.setEmail(email);
                 user.setName(name);
                 user.setPassword(password);
@@ -38,7 +38,6 @@
             <h1>My Account</h1>
 
             <form action="edit_user.jsp" method="POST">
-
                 <table>
                     <tr>
                         <td><label for="email">Email</label></td>
@@ -53,9 +52,6 @@
                         </td>
                     </tr>
                     <tr>
-                        <td></td>
-                    </tr>
-                    <tr>
                         <td><label for="password">Password</label></td>
                         <td>
                             <input id="password" type="password" value="<%= user.getPassword() %>" name="password">
@@ -66,8 +62,7 @@
                             <label for="gender">Gender</label>
                         </td>
                         <td>
-                            <div>
-                                
+                            <div>          
                                 <% String checked = "";
                                     if(user.getGender().equals("Male")){  checked="checked"; } %>                                    
                                 <input type="radio" name="gender" value="Male" <%= checked %>>
@@ -90,7 +85,7 @@
                         </td>
                         <td>
                             <select name="favcol">              
-                                <% String selected = "";%>
+                                <!-- Using ternary operator to determined whether a colour is selected, otherwise leave it empty = " " -->
                                 <option value="red" <%= (user.getFavouriteColour().equals("red")) ? "selected" : " "  %>>Red</option>                  
                                 <option value="green" <%= (user.getFavouriteColour().equals("green")) ? "selected" : " "  %>>Green</option>
                                 <option value="blue" <%= (user.getFavouriteColour().equals("blue")) ? "selected" : " "  %> >Blue</option>
@@ -107,7 +102,6 @@
                         </td>
                     </tr>
                 </table>
-
                 <p>Return to the <a href="index.jsp">main page</a>.</p>
             </form>
         </body>
