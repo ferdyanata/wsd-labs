@@ -1,30 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema
- xmlns:xs="http://www.w3.org/2001/XMLSchema"
- targetNamespace="http://www.uts.edu.au/31284/wsd-diary"
- xmlns="http://www.uts.edu.au/31284/wsd-diary"
- elementFormDefault="qualified">
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.uts.edu.au/31284/wsd-diary"
+    xmlns="http://www.uts.edu.au/31284/wsd-diary"
+    elementFormDefault="qualified">
  
- <!-- Insert your type declarations here -->
-<xs:simpleType name="rating">
- <xs:restriction base="xs:positiveInteger">
-  <xs:minInclusive value="1"/>
-  <xs:maxInclusive value="5"/>
- </xs:restriction>
-</xs:simpleType>
+    <!-- Insert your type declarations here -->
+    <xs:simpleType name="rating">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
 
-<xs:simpleType name="date">
- <xs:restriction base="xs:string">
-  <xs:pattern value="\d{1,2}/\d{1,2}/\d{1,4}"/>
- </xs:restriction>
-</xs:simpleType>
+    <xs:simpleType name="date">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{1,2}/\d{1,2}/\d{1,4}"/>
+        </xs:restriction>
+    </xs:simpleType>
 
-<xs:simpleType name="name">
-    <xs:restriction base="xs:string">
-        <xs:pattern value="[A-Z]+[a-zA-Z]*"/>
-    </xs:restriction>
-</xs:simpleType>
- <!-- Insert your element declarations here -->
+    <xs:simpleType name="name">
+        <xs:restriction base="xs:string">
+            <!-- First letter must be uppercase follow by any lowercase. Separation between first and surname has a space \s
+                    + allows (1 or more) repeated preceding character.-->
+            <xs:pattern value="[A-Za-z\s]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="email">
+        <xs:restriction base="xs:string">
+            <!-- -->
+            <xs:pattern value=""/>
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Insert your element declarations here -->
     <xs:element name="diary">    
         <xs:complexType>
             <xs:sequence>
@@ -34,32 +43,32 @@
                             <xs:element name="name" type="name"/>
                             <xs:element name="introduction" type="xs:string"/>
                             <xs:element name="dob" type="date"/>
-                            <xs:element name="email" type="xs:string"/>
+                            <xs:element name="email" type="email"/>
                             <xs:element name="interests" minOccurs="0" maxOccurs="1">
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="interest" minOccurs="0" maxOccurs="1">
-                                        <xs:complexType>
-                                            <xs:sequence>
-                                                <xs:element name="name" type="xs:string"/>
-                                                <xs:element name="description" type="xs:string"/>
-                                            </xs:sequence>
-                                        </xs:complexType>
-                                    </xs:element>
-                                </xs:sequence>
-                            </xs:complexType>
-                    </xs:element>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="interest" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="name" type="xs:string"/>
+                                                    <xs:element name="description" type="xs:string"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
                 <!-- unbounded means that there can be as many occurences of element "entry"
-                     as the author wishes. -->
+                as the author wishes. -->
                 <xs:element name="entry" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
                             <!-- Elements that contain a type, ie. type="xs:string" are simple types
-                                 because they do not contain child elements.
-                                 Also notice how it ends in '/>' and not </xs:element> -->
+                            because they do not contain child elements.
+                            Also notice how it ends in '/>' and not </xs:element> -->
                             <xs:element name="date" type="date"/>
                             <xs:element name="title" type="xs:string"/>
                             <xs:element name="rating" type="rating"/>
