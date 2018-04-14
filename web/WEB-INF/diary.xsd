@@ -22,7 +22,7 @@
     <xs:simpleType name="name">
         <xs:restriction base="xs:string">
             <!-- First letter must be uppercase follow by any lowercase. Separation between first and surname has a space \s
-                    + allows (1 or more) repeated preceding character.-->
+                    + allows (1 or more) repeated preceding character.   --> 
             <xs:pattern value="[A-Za-z\s]+"/>
         </xs:restriction>
     </xs:simpleType>
@@ -30,7 +30,7 @@
     <xs:simpleType name="email">
         <xs:restriction base="xs:string">
             <!-- -->
-            <xs:pattern value=""/>
+            <xs:pattern value="[a-zA-Z._]+[@]{1}[a-z-]+([.]{1}[a-z-]+)*"/>
         </xs:restriction>
     </xs:simpleType>
     <!-- Insert your element declarations here -->
