@@ -8,11 +8,11 @@
   <body>
       
       <!-- Replace the URL value with the location of movies.xml on your PC-->
-    <c:import url="file:///D:/NetBeans/NetBeans%208.1/Projects/Demo-lec6-XSLT/web/movies.xml"
+    <c:import url="/XSLTMoviesDemo/movies.xml"
               var="inputDoc" />
 
     <!-- Replace the URL value with the location of movies.xsl on your PC-->
-    <c:import url="file:///D:/NetBeans/NetBeans%208.1/Projects/Demo-lec6-XSLT/web/movies.xsl"
+    <c:import url="/XSLTMoviesDemo/movies.xsl"
               var="stylesheet" />
 
     <!-- Transform xml inputDoc using stylesheet -->
@@ -21,3 +21,5 @@
     </x:transform>
   </body>
 </html>
+
+<%--"file:///C:/NetBeans/NetBeans%208.1/Projects/Demo-lec6-XSLT/web/movies.xml"--%>
