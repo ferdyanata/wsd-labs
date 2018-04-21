@@ -21,5 +21,3 @@
     </x:transform>
   </body>
 </html>
-
-<%--"file:///C:/NetBeans/NetBeans%208.1/Projects/Demo-lec6-XSLT/web/movies.xml"--%>
