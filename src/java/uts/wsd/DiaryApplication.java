@@ -62,6 +62,10 @@ public class DiaryApplication {
     public Users getUsers() {
         return users;
     }
+    
+    public User getUser(String email){
+        return users.getUser(email);
+    }
 
     public void setUsers(Users users) {
         this.users = users;

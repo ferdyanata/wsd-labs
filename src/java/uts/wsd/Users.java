@@ -9,8 +9,8 @@ import java.util.*;
 import java.io.Serializable;
 import javax.xml.bind.annotation.*;
 
-@XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "users")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Users implements Serializable
 {
     @XmlElement(name = "user")

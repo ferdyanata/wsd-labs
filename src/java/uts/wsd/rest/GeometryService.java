@@ -5,6 +5,7 @@
  */
 package uts.wsd.rest;
 
+import uts.wsd.Rectangle;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 

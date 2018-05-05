@@ -21,9 +21,11 @@ public class Circle{
     }
 
     public Circle(double area) {
+        super();
         this.area = area;
     }
-
+    
+    @XmlElement
     public double getArea() {
         return area;
     }
@@ -31,7 +33,7 @@ public class Circle{
     public void setArea(double area) {
         this.area = area;
     }
-
+    
     public double getCircumference() {
         return circumference;
     }
@@ -39,7 +41,7 @@ public class Circle{
     public void setCircumference(double circumference) {
         this.circumference = circumference;
     }
-
+    
     public double getDiameter() {
         return diameter;
     }
@@ -47,7 +49,7 @@ public class Circle{
     public void setDiameter(double diameter) {
         this.diameter = diameter;
     }
-
+    
     public double getRadius() {
         return radius;
     }
@@ -57,18 +59,15 @@ public class Circle{
     }
     
     public double diameter()  {
-      diameter = radius * radius;
-      return diameter;
+      return radius * radius;
    }
-
-   public double area()   {
-      area = Math.PI * (radius * radius);
-      return area;
+    
+   public double area()   { 
+      return Math.PI * (radius * radius);
    }
-
+   
    public double circumference()   {
-      circumference = 2 * Math.PI * radius;
-      return circumference;
+      return 2 * Math.PI * radius;
    }
     
 }
