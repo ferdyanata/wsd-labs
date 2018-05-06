@@ -2,7 +2,7 @@
  *
  * @author Ferdy
  */
-package uts.wsd.rest;
+package uts.wsd;
 
 import javax.xml.bind.annotation.*;
 
@@ -11,45 +11,18 @@ import javax.xml.bind.annotation.*;
 // indicated by the four methods
 @XmlAccessorType(XmlAccessType.PROPERTY)
 public class Circle{
-    private double area;
-    private double circumference;
-    private double diameter;
     private double radius;
     
     public Circle() {
         super();
     }
 
-    public Circle(double area) {
+    public Circle(double radius) {
         super();
-        this.area = area;
+        this.radius = radius;
     }
     
     @XmlElement
-    public double getArea() {
-        return area;
-    }
-
-    public void setArea(double area) {
-        this.area = area;
-    }
-    
-    public double getCircumference() {
-        return circumference;
-    }
-
-    public void setCircumference(double circumference) {
-        this.circumference = circumference;
-    }
-    
-    public double getDiameter() {
-        return diameter;
-    }
-
-    public void setDiameter(double diameter) {
-        this.diameter = diameter;
-    }
-    
     public double getRadius() {
         return radius;
     }
@@ -58,16 +31,19 @@ public class Circle{
         this.radius = radius;
     }
     
-    public double diameter()  {
-      return radius * radius;
-   }
-    
-   public double area()   { 
+    @XmlElement
+   public double getArea()   { 
       return Math.PI * (radius * radius);
    }
    
-   public double circumference()   {
+   @XmlElement
+   public double getCircumference()   {
       return 2 * Math.PI * radius;
+   }
+   
+   @XmlElement
+   public double getDiameter(){
+       return 2 * radius;
    }
     
 }

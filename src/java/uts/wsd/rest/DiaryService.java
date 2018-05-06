@@ -47,6 +47,7 @@ public class DiaryService {
      * @return
      * @throws javax.xml.bind.JAXBException
      * @throws java.io.IOException  **/
+ 
  @Path("users")
  @GET
  @Produces(MediaType.TEXT_XML)
