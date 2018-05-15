@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <nextCatalog catalog="nbproject/private/retriever/catalog.xml"/>
+    <system systemId="http://localhost:8080/wsd-labs/Calculator?wsdl" uri="src/conf/xml-resources/web-service-references/Calculator/wsdl/localhost_8080/wsd-labs/Calculator.wsdl"/>
+    <system systemId="http://localhost:8080/wsd-labs/Calculator?xsd=1" uri="src/conf/xml-resources/web-service-references/Calculator/wsdl/localhost_8080/wsd-labs/Calculator.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/wsd-labs/Geometry?wsdl" uri="src/conf/xml-resources/web-service-references/Geometry/wsdl/localhost_8080/wsd-labs/Geometry.wsdl"/>
+    <system systemId="http://localhost:8080/wsd-labs/Geometry?xsd=1" uri="src/conf/xml-resources/web-service-references/Geometry/wsdl/localhost_8080/wsd-labs/Geometry.xsd_1.xsd"/>
 </catalog>
