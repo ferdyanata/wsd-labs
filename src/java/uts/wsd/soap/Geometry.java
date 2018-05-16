@@ -26,13 +26,14 @@ public class Geometry {
      */
     @WebMethod (operationName = "getRectangleGeometry")
     public Rectangle getRectangleGeometry(double width, double height){
-        return null;
-        
+        Rectangle rect = new Rectangle(width, height);
+        return rect;
     }
     
     @WebMethod (operationName = "getCircleGeometry")
     public Circle getCircleGeometry(double radius){
-        return null;
+        Circle circ = new Circle(radius);
+        return circ;
         
     }
 }

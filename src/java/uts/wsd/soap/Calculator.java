@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package uts.wsd.soap;
 
 import javax.jws.WebService;
@@ -17,7 +12,9 @@ import javax.jws.WebParam;
 public class Calculator {
 
     /**
-     * This is a sample web service operation
+     * Any public method is automatically considered a 
+     * WebMethod and you therefore should not make a method public 
+     * unless it is intended to be a WebMethod
      */
     @WebMethod(operationName = "hello")
     public String hello(@WebParam(name = "name") String txt) {
